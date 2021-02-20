@@ -1,0 +1,21 @@
+# This file is a template, and might need editing before it works on your project.
+---
+# All available Hugo versions are listed here:
+# https://gitlab.com/pages/hugo/container_registry
+image: registry.gitlab.com/pages/hugo:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+
+build:
+   script:
+       - hugo --minify
+   artifacts:
+      paths:
+         - public 
+
+deploy:
+   image: garland/aws-cli-docker   
+   sript:
+      - aws s3 sync ./public s3://$AWS_S3_bucket --delete --only-show-errors
+      #- aws cloudfront create-invalidation --distribution-id xxxxxxxxxxxxx --paths "/*"
