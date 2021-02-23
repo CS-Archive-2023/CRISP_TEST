@@ -16,4 +16,4 @@ CRISP is always looking for enterprising students interested in information secu
 
 The University of Denver offers a Master's degree in Cyber Security, which is an intensive two-year program focused on educating those with and without Computer Science backgrounds. Graduates of the degree program are ready to take on any career in cyber that they choose, including penetration testing, software security, SOC/NOC analyst and more. 
 
-True
+True always
