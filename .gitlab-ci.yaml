@@ -7,15 +7,21 @@ image: registry.gitlab.com/pages/hugo:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-build:
-   script:
-       - hugo --minify
-   artifacts:
-      paths:
-         - public 
+stages:
+  - build
+  - deploy
 
-deploy:
-   image: garland/aws-cli-docker   
-   sript:
-      - aws s3 sync ./public s3://$AWS_S3_bucket --delete --only-show-errors
-      #- aws cloudfront create-invalidation --distribution-id xxxxxxxxxxxxx --paths "/*"
+build_site:
+  stage: build
+  script:
+    - hugo --minify
+  artifacts:
+    paths:
+      - public 
+
+deploy_site:
+  stage: deploy
+  image: garland/aws-cli-docker   
+  sript:
+    - aws s3 sync ./public s3://$AWS_S3_bucket --delete --only-show-errors
+    #- aws cloudfront create-invalidation --distribution-id xxxxxxxxxxxxx --paths "/*"
