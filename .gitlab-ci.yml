@@ -7,15 +7,14 @@ image: registry.gitlab.com/pages/hugo:latest
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
 
-tags:
-  - website
-
 stages:
   - build
   - deploy
 
 build_site:
   stage: build
+  tags:
+  - website
   script:
     - hugo --minify
   artifacts:
@@ -24,6 +23,8 @@ build_site:
 
 deploy_site:
   stage: deploy
+  tags:
+  - website
   image: garland/aws-cli-docker   
   script:
     - aws s3 sync ./public s3://$AWS_S3_bucket --delete --only-show-errors
