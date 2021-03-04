@@ -4,7 +4,7 @@
 # https://gitlab.com/pages/hugo/container_registry
 #image: registry.gitlab.com/pages/hugo:latest
 #image: registry.gitlab.com/pages/hugo_extended:latest
-image: registry.gitlab.com/pages/hugo_extended:0.81.0
+image: registry.gitlab.com/pages/hugo_extended:0.80.0
 
 variables:
   GIT_SUBMODULE_STRATEGY: recursive
