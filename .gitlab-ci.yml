@@ -5,7 +5,7 @@
 #image: registry.gitlab.com/pages/hugo:latest
 ####image: registry.gitlab.com/pages/hugo/hugo_extended:latest
 #image: registry.gitlab.com/pages/hugo_extended:0.80.0
-image: hub.docker.com/repository/docker/jhubduedu/hugo:00012021
+image: jhubduedu/hugo:00012021
 
 
 variables:
