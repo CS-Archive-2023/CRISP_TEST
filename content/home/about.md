@@ -12,7 +12,7 @@ headless: false
 # Order that this section appears on the page.
 weight: 20
 
-title: About CRISPzzz
+title: About CRISP
 subtitle: Colorado Research Institute for Security and Privacy
 author: admin
 ---
