@@ -32,4 +32,4 @@ deploy_site:
   image: garland/aws-cli-docker   
   script:
     - aws s3 sync ./public s3://$AWS_S3_bucket --delete --only-show-errors
-    - aws cloudfront create-invalidation --distribution-id E215YZP98THMI6 --paths "/*"
+    - aws cloudfront create-invalidation --distribution-id E250K64GREAT5A --paths "/*"
